@@ -1,3 +1,13 @@
+---
+title: Autonomous Market Backend
+emoji: 📈
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: 4.44.0
+app_file: app.py
+pinned: false
+---
 # Global Market Intelligence Desk
 
 A local, single-user financial research application. A Next.js dashboard sits in front of a FastAPI service that reuses the Python provider registry. The application does not connect to a broker or place trades.
@@ -53,7 +63,7 @@ Optional Google sign-in requires a Google OAuth web client. In Google Cloud Cons
 - Mobile workspace drawer, compact SVG country map below 640px, stacked panels, and sticky prediction action. The desktop view retains the interactive 3D globe.
 - Pairwise correlations on aligned annual country macro series, including observation count and source links. Correlation is descriptive, not evidence of causation.
 - Asset history and 7/30/90-calendar-day forecast scenarios, when a configured provider returns dated prices. Walk-forward model selection is evaluated against a random-walk baseline; an unvalidated edge is explicitly reported. Empirical 95% ranges require at least 20 calibration residuals.
-- Official country fiscal context. India’s FY2025-26 estimate is narrowly scoped to eligible listed equity/equity-oriented fund sales, under the assumptions and rule citations shown in the UI; surcharge, cess, loss set-off, treaty, and filing effects are excluded.
+- Official country fiscal context. India?Ts FY2025-26 estimate is narrowly scoped to eligible listed equity/equity-oriented fund sales, under the assumptions and rule citations shown in the UI; surcharge, cess, loss set-off, treaty, and filing effects are excluded.
 - Simple and Pro views, source/contract catalog, five-minute provider refresh, explicit freshness/cadence, and date-range controls.
 
 The dashboard is not an institutional terminal data license. World Bank releases are not live market quotes, GDELT is a news index, and source contracts, exchange entitlements, geographic coverage, and redistribution rights vary by provider. The implementation catalog and limitations are documented in [`docs/feature-source-coverage.md`](docs/feature-source-coverage.md).
@@ -78,7 +88,7 @@ npm run lint
 npm run build
 ```
 
-Backend tests mock provider HTTP responses and do not consume live API quotas. No model claims predictive skill without beating the naïve baseline on later chronological test origins.
+Backend tests mock provider HTTP responses and do not consume live API quotas. No model claims predictive skill without beating the naA_ve baseline on later chronological test origins.
 
 ## Configuration
 
