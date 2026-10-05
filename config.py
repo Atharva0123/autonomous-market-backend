@@ -4,7 +4,7 @@ from __future__ import annotations
 from functools import lru_cache
 from typing import Literal
 
-from pydantic import Field
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -55,7 +55,12 @@ class Settings(BaseSettings):
     auth_session_max_age_seconds: int = Field(default=28800, ge=300, le=604800)
     auth_cookie_secure: bool = False
     provider_preferences_path: str = ".state/provider_preferences.json"
-    provider_preferences_database_url: str | None = None
+    # Neon’s Vercel integration supplies DATABASE_URL. Keep the explicit
+    # application-specific name available for non-Vercel deployments too.
+    provider_preferences_database_url: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices("PROVIDER_PREFERENCES_DATABASE_URL", "DATABASE_URL"),
+    )
     google_client_id: str | None = None
     google_client_secret: str | None = None
     google_redirect_uri: str = "http://localhost:3000/api/v1/auth/google/callback"

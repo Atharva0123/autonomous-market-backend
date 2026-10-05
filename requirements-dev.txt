@@ -1,0 +1,6 @@
+-r requirements.txt
+
+# Tests and local ASGI development server.
+pytest==9.1.1
+pytest-asyncio==1.4.0
+respx==0.22.0

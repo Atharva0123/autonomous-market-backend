@@ -1,21 +1,15 @@
-pydantic>=2.11.10,<3.0.0
-pydantic-settings>=2.0.0
-httpx>=0.27.0
-streamlit>=1.30.0
-streamlit-autorefresh>=1.0.1
-plotly>=5.0.0
-pytest>=8.0.0
-pytest-asyncio>=0.23.0
-respx>=0.21.0
-reportlab>=4.0.0
-fastapi>=0.110.0
-itsdangerous>=2.2.0
-uvicorn[standard]>=0.30.0
-pycountry>=24.6.1
-vaderSentiment>=3.3.2
-psycopg[binary]>=3.2.0
-numpy>=1.26.0
-scikit-learn>=1.4.0
-statsmodels>=0.14.0
-Pillow>=10.0.0,<12.0.0
-pandas<3.0.0
+# Minimal FastAPI runtime dependencies. Keep development and legacy dashboard
+# packages out of this file so Vercel bundles only the backend it serves.
+fastapi==0.142.2
+httpx==0.28.1
+itsdangerous==2.2.0
+numpy==2.2.5
+pandas==2.3.2
+psycopg[binary]==3.2.9
+pydantic==2.11.7
+pydantic-settings==2.10.1
+pycountry==24.6.1
+scikit-learn==1.7.2
+statsmodels==0.14.5
+uvicorn==0.38.0
+vaderSentiment==3.3.2

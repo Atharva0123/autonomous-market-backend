@@ -1,0 +1,10 @@
+-r requirements.txt
+
+# Optional Streamlit dashboard retained for local compatibility. The active
+# Next.js frontend and FastAPI service do not install these on Vercel.
+streamlit==1.65.0
+streamlit-autorefresh==1.0.1
+plotly==6.3.0
+reportlab==4.4.3
+pandas==2.3.2
+Pillow==12.3.0

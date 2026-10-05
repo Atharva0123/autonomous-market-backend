@@ -21,7 +21,7 @@ In PowerShell, from the repository root:
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-dev.txt
 Copy-Item .env.example .env
 ```
 
@@ -40,7 +40,7 @@ Copy-Item .env.example .env.local
 npm run dev
 ```
 
-Open `http://localhost:3000`. Only the fixed username `AtharvaKh` is accepted. For a local first run, set a private `AUTH_SETUP_TOKEN` in root `.env`; the setup screen requires it before creating the single account. Account state and provider preferences are stored under ignored `.state/`. Passwords are salted PBKDF2 hashes, not encrypted passwords. For hosted deployment, pre-provision the password hash and session secret in the API host's private environment and use PostgreSQL for durable provider settings. See [`docs/deployment-security.md`](docs/deployment-security.md). The prior Streamlit app is retained during migration and remains available with `streamlit run app.py`.
+Open `http://localhost:3000`. Only the fixed username `AtharvaKh` is accepted. For a local first run, set a private `AUTH_SETUP_TOKEN` in root `.env`; the setup screen requires it before creating the single account. Account state and provider preferences are stored under ignored `.state/`. Passwords are salted PBKDF2 hashes, not encrypted passwords. For hosted deployment, pre-provision the password hash and session secret in the API host's private environment and use PostgreSQL for durable provider settings and request quotas. The Vercel backend uses the minimal pinned runtime in `requirements.txt`; use `requirements-dev.txt` for local API development and tests. The prior Streamlit app is retained and can be run after installing `requirements-legacy-ui.txt`. See [`docs/deployment-security.md`](docs/deployment-security.md).
 
 The dashboard uses the public World Bank Indicators API and GDELT news index without keys. The 3D globe uses Natural Earth country boundaries joined to ISO metadata, so clicking a country polygon updates the country dashboard. Country macro and news requests load independently: a GDELT timeout or rate limit no longer prevents the macro charts from rendering. Selecting a sector filters the macro chart to relevant *national* World Bank indicators; these are sector context, not sector returns or causal estimates. English headline sentiment is shown only when indexed English headlines are available.
 

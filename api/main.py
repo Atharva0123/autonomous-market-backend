@@ -44,7 +44,7 @@ if os.getenv("VERCEL") and not (settings.auth_password_hash and settings.auth_pa
 if os.getenv("VERCEL") and not settings.auth_cookie_secure:
     raise RuntimeError("AUTH_COOKIE_SECURE=true is required on Vercel so authentication cookies are sent over HTTPS only.")
 if os.getenv("VERCEL") and not settings.provider_preferences_database_url:
-    raise RuntimeError("Set PROVIDER_PREFERENCES_DATABASE_URL to private PostgreSQL on Vercel so provider settings and monthly API quotas persist across function instances.")
+    raise RuntimeError("Set PROVIDER_PREFERENCES_DATABASE_URL (or DATABASE_URL from the Neon integration) to private PostgreSQL on Vercel so provider settings and monthly API quotas persist across function instances.")
 data_service = PublicDataService(settings)
 
 

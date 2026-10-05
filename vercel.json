@@ -1,0 +1,9 @@
+{
+  "framework": "fastapi",
+  "functions": {
+    "api/main.py": {
+      "maxDuration": 60,
+      "excludeFiles": "{tests/**,frontend/**,streamlit_app.py,app.py,autonomous-market-api/**,docs/**,*.log}"
+    }
+  }
+}
